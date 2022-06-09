@@ -86,7 +86,7 @@ final class Eppy {
 	 * @access public
 	 */
 
-	protected function __construct() {
+	public function __construct() {
 		// Define necessary constants
 		$this->defines_constant();
 
@@ -128,6 +128,7 @@ final class Eppy {
 	}
 
 	public function on_plugins_loaded() {
+		// error_log('test');
 		add_action( 'elementor/init', [$this, 'init'] );
 		$this->run();
 	}
@@ -232,12 +233,16 @@ final class Eppy {
 			)
 		);
 
-		$file = EPPY_PATH . '/class-' . $file_name . '.php';
+		$file_name = str_replace( 'core/', 'core/class-', $file_name );
+
+		$file = EPPY_PATH . $file_name . '.php';
 		if ( ! class_exists( $class_name ) && is_readable( $file ) ) {
 			include_once $file;
 		}
-		// error_log( $class_name );
-		// error_log( $file_name );
+
+		error_log( $class_name );
+		error_log( $file_name );
+		error_log( $file );
 	}
 
 	public function run() {
@@ -246,7 +251,4 @@ final class Eppy {
 
 }
 
-add_action( 'init', 'Eppy_elementor_init' );
-function Eppy_elementor_init() {
-	Eppy::get_instance();
-}
+new Eppy();
