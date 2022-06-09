@@ -236,13 +236,19 @@ final class Eppy {
 		$file_name = str_replace( 'core/', 'core/class-', $file_name );
 
 		$file = EPPY_PATH . $file_name . '.php';
+
+		if ( str_contains( $file_name, 'widgets/' ) ) {
+			$widget = explode( '/', $file_name )[1];
+			$file   = EPPY_PATH . $file_name . '/' . $widget . '.php';
+		}
+		
 		if ( ! class_exists( $class_name ) && is_readable( $file ) ) {
 			include_once $file;
 		}
 
-		error_log( $class_name );
-		error_log( $file_name );
-		error_log( $file );
+		// error_log( $class_name );
+		// error_log( $file_name );
+		// error_log( $file );
 	}
 
 	public function run() {
