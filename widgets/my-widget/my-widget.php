@@ -1,7 +1,7 @@
 <?php
-namespace Elementor;
+namespace Eppy\Elementor\Widgets;
 
-class My_Widget extends Widget_Base {
+class My_Widget extends \Elementor\Widget_Base {
 
 	/**
 	 * Get widget name.
