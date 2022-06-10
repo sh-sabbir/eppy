@@ -1,18 +1,20 @@
 <?php
 namespace Eppy\Elementor\Widgets;
 
-class My_Widget extends \Elementor\Widget_Base {
+use Eppy\Elementor\Core\Eppy_Base;
 
-	/**
-	 * Get widget name.
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 * @return string Widget name.
-	 */
-	public function get_name() {
-		return 'my-widget';
-	}
+class My_Widget extends Eppy_Base {
+
+	// /**
+	//  * Get widget name.
+	//  * @since 1.0.0
+	//  * @access public
+	//  *
+	//  * @return string Widget name.
+	//  */
+	// public function get_name() {
+	// 	return 'my-widget';
+	// }
 
 	/**
 	 * Get widget title.

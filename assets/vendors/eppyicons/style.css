@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'eppyicons';
+  src:  url('fonts/eppyicons.eot?mwlc3r');
+  src:  url('fonts/eppyicons.eot?mwlc3r#iefix') format('embedded-opentype'),
+    url('fonts/eppyicons.ttf?mwlc3r') format('truetype'),
+    url('fonts/eppyicons.woff?mwlc3r') format('woff'),
+    url('fonts/eppyicons.svg?mwlc3r#eppyicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.eppy {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'eppyicons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.eppy-tab-post-list:before {
+  content: "\e900";
+}
+.eppy-eppy:before {
+  content: "\e901";
+}
